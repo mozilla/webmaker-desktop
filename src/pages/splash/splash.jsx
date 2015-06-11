@@ -77,9 +77,11 @@ module.exports = React.createClass({
             <h2>Share the things you love with your friends.</h2>
             <img src="./img/mozilla.svg" width="98" height="25" alt="Mozilla" />
             <ul className="links">
-              <li><a href="https://webmaker.org/en-US/privacy">Privacy</a></li>
               <li><a href="https://webmaker.org/en-US/terms">Legal</a></li>
+              <li><a href="https://webmaker.org/en-US/privacy">Privacy</a></li>
+              <li><a href="https://sendto.mozilla.org/page/contribute/join-mozilla?source=join_link">Donate</a></li>
               <li><a href="mailto:help@webmaker.org">Contact</a></li>
+              <li><img src="./img/twitter.svg" className="icon"/><a href="https://twitter.com/Webmaker">Twitter</a></li>
             </ul>
           </div>
         </div>
@@ -124,7 +126,7 @@ module.exports = React.createClass({
         _this.setState({
           complete: body.ok
         });
-      }); 
+      });
     }
   }
 });

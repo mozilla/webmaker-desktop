@@ -245,35 +245,33 @@
   #footer {
     display: block;
     text-align: center;
-
     border-top: 1px solid #d7d9de;
-  }
-
-  #footer h2 {
-    margin-top: 30px;
-    color: #36515b;
-  }
-
-  #footer img {
-    margin-top: 30px;
-  }
-
-  #footer ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 300px;
-    margin: 30px auto;
-    padding: 0;
-    list-style: none;
-  }
-
-  #footer ul li {
-    display: inline;
-    padding:25px;
-    margin: auto;
-    font-size: 0.9em;
-    color: #aaafbd;
+    h2 {
+      margin-top: 30px;
+      color: #36515b;
+    }
+    img {
+      margin-top: 30px;
+    }
+    .icon {
+      margin: 0 4px 0 0;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+      margin: 20px auto 30px auto;
+      padding: 0;
+      list-style: none;
+      li {
+        display: inline;
+        padding:25px;
+        margin: auto;
+        font-size: 0.9em;
+        color: #aaafbd;
+      }
+    }
   }
 
   /* ----------------------------- */
@@ -310,7 +308,7 @@
    * Responsive
    */
   @media (max-width: 980px) {
-    h1 { 
+    h1 {
       margin-bottom: .25em;
     }
 
@@ -319,7 +317,7 @@
       width: 200px;
     }
 
-    button { 
+    button {
       height: 40px; width:60px;
     }
 
@@ -337,8 +335,8 @@
       width: 260px;
     }
 
-    #hero { 
-      display: none; 
+    #hero {
+      display: none;
     }
 
     #optin label {
@@ -355,7 +353,7 @@
 
     #mid .segment {
       width: 100%;
-      margin-bottom: 2em; 
+      margin-bottom: 2em;
     }
 
   }
@@ -365,5 +363,5 @@
       width: auto;
       margin: 0 1rem;
     }
-  } 
+  }
 }
