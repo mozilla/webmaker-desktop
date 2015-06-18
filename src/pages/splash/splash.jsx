@@ -1,3 +1,11 @@
+var UAParser = require('ua-parser-js');
+var ua = new UAParser();
+ua.setUA(window.navigator.userAgent);
+var os = ua.getOS();
+if (os && os.name === 'Android') {
+  window.location = 'https://play.google.com/store/apps/details?id=org.mozilla.webmaker';
+}
+
 var React = require('react/addons');
 var Footer = require('../../components/footer/footer.jsx');
 var Masthead = require('../../components/masthead/masthead.jsx');
