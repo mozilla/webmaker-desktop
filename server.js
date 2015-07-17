@@ -4,6 +4,7 @@ var qs = require('querystring');
 var bunyan = require('bunyan');
 
 var bsd = require('./src/util/bsd');
+var archiveRedirect = require('./archive-redirect');
 
 // Create server
 var server = new Hapi.Server({
@@ -88,6 +89,29 @@ server.route({
       ]
     }
   }
+});
+
+archiveRedirect.redirectMap.forEach(function(redirect) {
+  redirect.from.forEach(function(path) {
+    server.route({
+      method: 'GET',
+      path: path,
+      handler: function (request, reply) {
+        if (path.match(/events/) && request.params.event) {
+          reply.redirect(redirect.to + request.params.event);
+        } else {
+          reply.redirect(redirect.to);
+        }
+      }
+    });
+  });
+});
+
+server.ext('onPreResponse', function (request, reply) {
+  if (request.response.isBoom) {
+    return reply.redirect('/#'+request.path);
+  }
+  return reply.continue();
 });
 
 // Start listening
