@@ -3,7 +3,7 @@ var URL_EVENTS_WEBMAKER = 'https://events.webmaker.org';
 var URL_TEACH_SITE = 'https://teach.mozilla.org';
 
 exports.redirectMap = [{
-  to: URL_ARCHIVED_WEBMAKER + '/tools',
+  to: URL_TEACH_SITE + '/tools',
   from: [
     '/tools/x-ray-goggles',
     '/tools/x-ray-goggles/install'
