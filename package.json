@@ -42,7 +42,7 @@
     "react-dom": "0.14.0",
     "react-intl": "v2.0.0-pr-3",
     "react-router": "v1.0.0-rc3",
-    "ua-parser-js": "0.7.9",
+    "ua-parser-js": "0.7.10",
     "webmaker-core": "https://github.com/mozilla/webmaker-core.git#5e059751a7c22b07ce30022d8f8745235be9c81b"
   },
   "devDependencies": {
