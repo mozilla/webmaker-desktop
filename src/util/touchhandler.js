@@ -48,7 +48,7 @@
           return handlers.handleTouchRepositioning(evt);
         }
         var x = evt.clientX || evt.touches[0].pageX,
-            y = evt.clientY || evt.touches[0].pageY;
+          y = evt.clientY || evt.touches[0].pageY;
         positionable.handleTranslation(x - transform.x1 + mark.x, y - transform.y1 + mark.y);
       },
 
@@ -84,13 +84,13 @@
         transform.x2 = evt.touches[1].pageX;
         transform.y2 = evt.touches[1].pageY;
         var x1 = transform.x1,
-            y1 = transform.y1,
-            x2 = transform.x2,
-            y2 = transform.y2,
-            dx = x2 - x1,
-            dy = y2 - y1,
-            d = Math.sqrt(dx*dx + dy*dy),
-            a = Math.atan2(dy,dx);
+          y1 = transform.y1,
+          x2 = transform.x2,
+          y2 = transform.y2,
+          dx = x2 - x1,
+          dy = y2 - y1,
+          d = Math.sqrt(dx*dx + dy*dy),
+          a = Math.atan2(dy,dx);
         transform.distance = d;
         transform.angle = a;
       },
@@ -105,15 +105,15 @@
           return;
         }
         var x1 = evt.touches[0].pageX,
-            y1 = evt.touches[0].pageY,
-            x2 = evt.touches[1].pageX,
-            y2 = evt.touches[1].pageY,
-            dx = x2 - x1,
-            dy = y2 - y1,
-            d = Math.sqrt(dx*dx + dy*dy),
-            a = Math.atan2(dy,dx),
-            da = a - transform.angle + mark.angle,
-            s = d/transform.distance * mark.scale;
+          y1 = evt.touches[0].pageY,
+          x2 = evt.touches[1].pageX,
+          y2 = evt.touches[1].pageY,
+          dx = x2 - x1,
+          dy = y2 - y1,
+          d = Math.sqrt(dx*dx + dy*dy),
+          a = Math.atan2(dy,dx),
+          da = a - transform.angle + mark.angle,
+          s = d/transform.distance * mark.scale;
         positionable.handleRotationAndScale(da, s);
       },
 

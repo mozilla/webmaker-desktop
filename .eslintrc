@@ -1,9 +1,9 @@
 {
   "rules": {
-    "indent": [1, 2],
+    "indent": [2, 2],
     "no-empty": [2],
     "no-console": [0],
-    "comma-dangle": [1],
+    "comma-dangle": [2],
     "no-unused-vars": [0],
     "linebreak-style": [2, "unix"],
     "semi": [2, "always"]
@@ -14,10 +14,12 @@
     "browser": true
   },
   "extends": "eslint:recommended",
-  "ecmaFeatures": {
-    "es6": true,
-    "jsx": true,
-    "experimentalObjectRestSpread": true
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
   },
   "plugins": [
     "react"
