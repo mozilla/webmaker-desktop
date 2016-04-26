@@ -18,23 +18,23 @@
   "engines": {
     "node": "4.4.x"
   },
-  "dependencies": {
-    "bunyan": "^1.8.0",
-    "classnames": "^2.2.3",
-    "color": "^0.11.1",
-    "email-validator": "^1.0.4",
-    "handlebars": "^4.0.5",
-    "hapi": "^13.3.0",
-    "hapi-bunyan": "^0.6.0",
-    "nets": "^3.2.0",
-    "react": "^15.0.1",
-    "react-cookie": "^0.4.5",
-    "react-dom": "^15.0.1",
-    "react-intl": "^2.0.1",
-    "react-router": "^2.3.0",
-    "ua-parser-js": "^0.7.10",
-    "webmaker-core": "https://github.com/mozilla/webmaker-core.git#v1.6.2",
-    "object-assign": "^4.0.1"
+  "scripts": {
+    "start": "npm run build && npm run server",
+    "postinstall": "npm run build",
+    "dev": "npm-run-all --parallel server watch:**",
+    "config": "node ./build-config.js > src/config.js",
+    "build": "npm-run-all build:**",
+    "build:clean": "rimraf ./build && mkdirp ./build",
+    "build:static": "ncp ./static ./build",
+    "build:l10njson": "yamlconvert intl-config.json",
+    "build:css": "npm run watch:css -- --no-watch",
+    "build:js": "npm run build:core && npm run config && webpack",
+    "build:core": "node npm_tasks/copy-env.js && node npm_tasks/build-core.js",
+    "watch:js": "npm run build:js -- --watch",
+    "watch:css": "autoless --autoprefix \"> 5%, last 2 versions, android >= 4.0\" ./src ./build/css",
+    "test": "npm run test:lint",
+    "test:lint": "eslint --ext .js,.jsx src/",
+    "server": "node server.js"
   },
   "devDependencies": {
     "autoless": "^0.1.7",
@@ -55,22 +55,22 @@
     "webpack": "^1.13.0",
     "yaml-intl-xml-json-converter": "^0.0.7"
   },
-  "scripts": {
-    "start": "npm run build && npm run server",
-    "postinstall": "npm run build",
-    "dev": "npm-run-all --parallel server watch:**",
-    "config": "node ./build-config.js > src/config.js",
-    "build": "npm-run-all build:**",
-    "build:clean": "rimraf ./build && mkdirp ./build",
-    "build:static": "ncp ./static ./build",
-    "build:l10njson": "yamlconvert intl-config.json",
-    "build:css": "npm run watch:css -- --no-watch",
-    "build:js": "npm run build:core && npm run config && webpack",
-    "build:core": "node npm_tasks/copy-env.js && node npm_tasks/build-core.js",
-    "watch:js": "npm run build:js -- --watch",
-    "watch:css": "autoless --autoprefix \"> 5%, last 2 versions, android >= 4.0\" ./src ./build/css",
-    "test": "npm run test:lint",
-    "test:lint": "eslint --ext .js,.jsx src/",
-    "server": "node server.js"
+  "dependencies": {
+    "bunyan": "^1.8.0",
+    "classnames": "^2.2.3",
+    "color": "^0.11.1",
+    "email-validator": "^1.0.4",
+    "handlebars": "^4.0.5",
+    "hapi": "^13.3.0",
+    "hapi-bunyan": "^0.6.0",
+    "nets": "^3.2.0",
+    "react": "^15.0.1",
+    "react-cookie": "^0.4.5",
+    "react-dom": "^15.0.1",
+    "react-intl": "^2.0.1",
+    "react-router": "^2.3.0",
+    "ua-parser-js": "^0.7.10",
+    "webmaker-core": "https://github.com/mozilla/webmaker-core.git#v1.6.2",
+    "object-assign": "^4.0.1"
   }
 }
