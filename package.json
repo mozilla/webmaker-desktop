@@ -31,7 +31,7 @@
   "dependencies": {
     "bunyan": "1.5.1",
     "classnames": "2.2.0",
-    "color": "0.10.1",
+    "color": "0.11.0",
     "email-validator": "1.0.3",
     "handlebars": "4.0.3",
     "hapi": "8.6.0",
