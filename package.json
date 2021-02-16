@@ -58,7 +58,7 @@
     "mkdirp": "~0.5.1",
     "ncp": "^2.0.0",
     "npm-run-all": "~1.2.4",
-    "rimraf": "~2.4.3",
+    "rimraf": "~2.5.0",
     "webpack": "~1.12.2",
     "yaml-intl-xml-json-converter": "0.0.7"
   },
