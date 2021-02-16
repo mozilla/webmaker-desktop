@@ -41,7 +41,7 @@
     "react-cookie": "0.4.1",
     "react-dom": "0.14.0",
     "react-intl": "v2.0.0-pr-3",
-    "react-router": "v1.0.0-rc3",
+    "react-router": "1.0.0",
     "ua-parser-js": "0.7.9",
     "webmaker-core": "https://github.com/mozilla/webmaker-core.git#v1.6.1"
   },
